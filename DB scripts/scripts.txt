@@ -1,0 +1,585 @@
+
+
+
+create table Users(
+UserId int  IDENTITY(1,1) ,
+UserName nvarchar(50),
+[CreatedDate] [date] NULL,
+CreatedBy nvarchar(50),
+[ModifiedDate] [date] NULL,
+UpdatedBy nvarchar(50)
+)
+insert into Users values ('Swaroop',getdate(),'Support',getdate(),'Support')
+insert into Users values ('Arun',getdate(),'Support',getdate(),'Support')
+insert into Users values ('Vara Prasad',getdate(),'Support',getdate(),'Support')
+insert into Users values ('Kranthi',getdate(),'Support',getdate(),'Support')
+insert into Users values ('Anshuman',getdate(),'Support',getdate(),'Support')
+insert into Users values ('Arunabha',getdate(),'Support',getdate(),'Support')
+insert into Users values ('Savitri',getdate(),'Support',getdate(),'Support')
+
+
+create table Applications(
+ApplicationId int  IDENTITY(1,1) ,
+ApplicationName nvarchar(50),
+ApplicatonRemedyGroup nvarchar(50) Null,
+[CreatedDate] [date] NULL,
+CreatedBy nvarchar(50),
+[ModifiedDate] [date] NULL,
+ModifiedBy nvarchar(50)
+)
+
+
+insert into Applications values ('Contractor Quality Assurance','SOGAS - COMPLIANCE TECHNOLOGY',getdate(),'Support',getdate(),'Support')
+insert into Applications values ('Gupta','SOGAS - COMPLIANCE TECHNOLOGY',getdate(),'Support',getdate(),'Support')
+insert into Applications values ('Scorecard','SOGAS - COMPLIANCE TECHNOLOGY',getdate(),'Support',getdate(),'Support')
+insert into Applications values ('SouthStar Click',null,getdate(),'Support',getdate(),'Support')
+insert into Applications values ('Click',null,getdate(),'Support',getdate(),'Support')
+insert into Applications values ('Elroy',null,getdate(),'Support',getdate(),'Support')
+insert into Applications values ('UAG',null,getdate(),'Support',getdate(),'Support')
+insert into Applications values ('Field Operations Portal',null,getdate(),'Support',getdate(),'Support')
+
+
+create table UserApplicationMapping(
+Id int Primary Key Identity(1,1),
+UserId int ,
+ApplicationId int,
+ApplicatonRemedyGroup nvarchar(50) Null,
+[CreatedDate] [date] NULL,
+CreatedBy nvarchar(50),
+[ModifiedDate] [date] NULL,
+ModifiedBy nvarchar(50),
+Foreign Key(UserId) References Users(UserId),
+Foreign Key(ApplicationId) References Applications(ApplicationId),
+)
+
+insert into UserApplicationMapping values (1,1,'SOGAS - COMPLIANCE TECHNOLOGY',GETDATE(),'SUPPORT',GETDATE(),'SUPPORT')
+insert into UserApplicationMapping values (1,2,'SOGAS - COMPLIANCE TECHNOLOGY',GETDATE(),'SUPPORT',GETDATE(),'SUPPORT')
+insert into UserApplicationMapping values (1,3,'SOGAS - COMPLIANCE TECHNOLOGY',GETDATE(),'SUPPORT',GETDATE(),'SUPPORT')
+insert into UserApplicationMapping values (3,1,'SOGAS - COMPLIANCE TECHNOLOGY',GETDATE(),'SUPPORT',GETDATE(),'SUPPORT')
+insert into UserApplicationMapping values (3,2,'SOGAS - COMPLIANCE TECHNOLOGY',GETDATE(),'SUPPORT',GETDATE(),'SUPPORT')
+insert into UserApplicationMapping values (3,3,'SOGAS - COMPLIANCE TECHNOLOGY',GETDATE(),'SUPPORT',GETDATE(),'SUPPORT')
+insert into UserApplicationMapping values (2,6,'SOGAS - COMPLIANCE TECHNOLOGY',GETDATE(),'SUPPORT',GETDATE(),'SUPPORT')
+insert into UserApplicationMapping values (2,7,'SOGAS - COMPLIANCE TECHNOLOGY',GETDATE(),'SUPPORT',GETDATE(),'SUPPORT')
+
+
+
+create table Incidents(
+    Id int identity(1,1),
+     IncidentId   int,
+     Percentage   int,
+     Comment    nvarchar(500) ,
+     ApplicationName    nvarchar(50) ,
+     CreatedDate    date ,
+     ModifiedDate    date ,
+     ResolutionDate    date 
+)
+
+create table Incidents(
+    Id int identity(1,1),
+     IncidentId   int,
+     Percentage   int,
+     Comment    nvarchar(500) ,
+     ApplicationName    nvarchar(50) ,
+     CreatedDate    date ,
+     ModifiedDate    date ,
+     ResolutionDate    date 
+)
+
+     insert into Incidents values(   1,
+         64536,
+         34,
+     'Architecto consectetur aut occaecati et.' ,
+     'CQA' ,
+          '2018-04-01' ,
+         '2018-04-01' ,
+         '2018-04-01' 
+  )
+  
+     insert into Incidents values(   2,
+         38073,
+         89,
+     'Hic vel porro dolore id.' ,
+     'CQA' ,
+          '2018-04-01' ,
+         '2018-04-01' ,
+         '2018-04-01' 
+  )
+  
+     insert into Incidents values(   3,
+         75500,
+         25,
+     'Blanditiis nemo dolore non suscipit neque magnam ut.' ,
+     'CQA' ,
+          '2018-04-01' ,
+         '2018-04-01' ,
+         '2018-04-01' 
+  )
+  
+     insert into Incidents values(   4,
+         77912,
+         36,
+     'Non rerum possimus est voluptates sit quidem voluptatem soluta.' ,
+     'CQA' ,
+          '2018-04-01' ,
+         '2018-04-01' ,
+         '2018-04-01' 
+  )
+  
+     insert into Incidents values(   5,
+         45507,
+         64,
+     'Numquam deleniti dicta odit.' ,
+     'CQA' ,
+          '2018-04-01' ,
+         '2018-04-01' ,
+         '2018-04-01' 
+  )
+  
+     insert into Incidents values(   6,
+         6686,
+         97,
+     'Assumenda veniam repellendus repellat.' ,
+     'CQA' ,
+          '2018-04-01' ,
+         '2018-04-01' ,
+         '2018-04-01' 
+  )
+  
+     insert into Incidents values(   7,
+         50836,
+         63,
+     'Sequi deserunt sit explicabo et expedita odit quibusdam.' ,
+     'CQA' ,
+          '2018-04-01' ,
+         '2018-04-01' ,
+         '2018-04-01' 
+  )
+  
+     insert into Incidents values(   8,
+         55556,
+         56,
+     'Similique quam ipsum.' ,
+     'CQA' ,
+          '2018-04-01' ,
+         '2018-04-01' ,
+         '2018-04-01' 
+  )
+  
+     insert into Incidents values(   9,
+         1947,
+         34,
+     'Nesciunt optio earum.' ,
+     'CQA' ,
+          '2018-04-01' ,
+         '2018-04-01' ,
+         '2018-04-01' 
+  )
+  
+     insert into Incidents values(   10,
+         18054,
+         54,
+     'Aliquid officia voluptas rerum.' ,
+     'CQA' ,
+          '2018-04-01' ,
+         '2018-04-01' ,
+         '2018-04-01' 
+  )
+  
+     insert into Incidents values(   11,
+         349,
+         54,
+     'Tenetur architecto et repudiandae dolor aut voluptatum quia culpa.' ,
+     'CQA' ,
+          '2018-04-01' ,
+         '2018-04-01' ,
+         '2018-04-01' 
+  )
+  
+     insert into Incidents values(   12,
+         33962,
+         36,
+     'Unde fuga earum saepe dicta earum repellat voluptas libero omnis.' ,
+     'CQA' ,
+          '2018-04-01' ,
+         '2018-04-01' ,
+         '2018-04-01' 
+  )
+  
+     insert into Incidents values(   13,
+         31843,
+         12,
+     'Quia voluptas eos veniam aut aut tempora saepe ratione quam.' ,
+     'CQA' ,
+          '2018-04-01' ,
+         '2018-04-01' ,
+         '2018-04-01' 
+  )
+  
+     insert into Incidents values(   14,
+         38918,
+         40,
+     'Est id in ex mollitia.' ,
+     'CQA' ,
+          '2018-04-01' ,
+         '2018-04-01' ,
+         '2018-04-01' 
+  )
+  
+     insert into Incidents values(   15,
+         23845,
+         42,
+     'Itaque modi in in dolore nihil.' ,
+     'CQA' ,
+          '2018-04-01' ,
+         '2018-04-01' ,
+         '2018-04-01' 
+  )
+  
+     insert into Incidents values(   16,
+         48423,
+         10,
+     'Laudantium inventore asperiores quas officiis at laboriosam sequi accusantium omnis.' ,
+     'CQA' ,
+          '2018-04-01' ,
+         '2018-04-01' ,
+         '2018-04-01' 
+  )
+  
+     insert into Incidents values(   17,
+         39014,
+         48,
+     'Error quae sint similique repellendus quibusdam.' ,
+     'CQA' ,
+          '2018-04-01' ,
+         '2018-04-01' ,
+         '2018-04-01' 
+  )
+  
+     insert into Incidents values(   18,
+         43269,
+         39,
+     'Est eos at libero error cupiditate vel tempora et.' ,
+     'CQA' ,
+          '2018-04-01' ,
+         '2018-04-01' ,
+         '2018-04-01' 
+  )
+  
+     insert into Incidents values(   19,
+         86327,
+         45,
+     'Consequatur doloremque quos architecto culpa minus delectus a id.' ,
+     'CQA' ,
+          '2018-04-01' ,
+         '2018-04-01' ,
+         '2018-04-01' 
+  )
+  
+     insert into Incidents values(   20,
+         17000,
+         90,
+     'Tenetur molestias placeat ut minima.' ,
+     'CQA' ,
+          '2018-04-01' ,
+         '2018-04-01' ,
+         '2018-04-01' 
+  )
+  
+     insert into Incidents values(   21,
+         86910,
+         46,
+     'Rerum cupiditate ea sed fuga libero mollitia in.' ,
+     'CQA' ,
+          '2018-04-01' ,
+         '2018-04-01' ,
+         '2018-04-01' 
+  )
+  
+     insert into Incidents values(   22,
+         79806,
+         48,
+     'Illum totam minima.' ,
+     'CQA' ,
+          '2018-04-01' ,
+         '2018-04-01' ,
+         '2018-04-01' 
+  )
+  
+     insert into Incidents values(   23,
+         99742,
+         27,
+     'Facere fugit expedita modi in id consequatur.' ,
+     'CQA' ,
+          '2018-04-01' ,
+         '2018-04-01' ,
+         '2018-04-01' 
+  )
+  
+     insert into Incidents values(   24,
+         91913,
+         98,
+     'Dignissimos molestias aliquam ducimus distinctio unde ab sed.' ,
+     'CQA' ,
+          '2018-04-01' ,
+         '2018-04-01' ,
+         '2018-04-01' 
+  )
+  
+     insert into Incidents values(   25,
+         52200,
+         35,
+     'Sit eos in.' ,
+     'CQA' ,
+          '2018-04-01' ,
+         '2018-04-01' ,
+         '2018-04-01' 
+  )
+  
+     insert into Incidents values(   26,
+         4193,
+         3,
+     'Voluptates quasi ut sequi vel aut.' ,
+     'CQA' ,
+          '2018-04-01' ,
+         '2018-04-01' ,
+         '2018-04-01' 
+  )
+  
+     insert into Incidents values(   27,
+         40009,
+         74,
+     'Culpa minus officia iste omnis.' ,
+     'CQA' ,
+          '2018-04-01' ,
+         '2018-04-01' ,
+         '2018-04-01' 
+  )
+  
+     insert into Incidents values(   28,
+         36538,
+         13,
+     'Modi unde rerum.' ,
+     'CQA' ,
+          '2018-04-01' ,
+         '2018-04-01' ,
+         '2018-04-01' 
+  )
+  
+     insert into Incidents values(   29,
+         15476,
+         27,
+     'Libero earum ut unde et laborum voluptas omnis aliquid.' ,
+     'CQA' ,
+          '2018-04-01' ,
+         '2018-04-01' ,
+         '2018-04-01' 
+  )
+  
+     insert into Incidents values(   30,
+         30144,
+         93,
+     'Dolore eaque ipsa voluptate cupiditate consequatur laborum iste voluptatibus.' ,
+     'CQA' ,
+          '2018-04-01' ,
+         '2018-04-01' ,
+         '2018-04-01' 
+  )
+  
+     insert into Incidents values(   31,
+         24696,
+         63,
+     'Velit aliquam tempore culpa recusandae nisi quos et.' ,
+     'CQA' ,
+          '2018-04-01' ,
+         '2018-04-01' ,
+         '2018-04-01' 
+  )
+  
+     insert into Incidents values(   32,
+         64908,
+         58,
+     'Aut quibusdam dolore quidem.' ,
+     'CQA' ,
+          '2018-04-01' ,
+         '2018-04-01' ,
+         '2018-04-01' 
+  )
+  
+     insert into Incidents values(   33,
+         54435,
+         49,
+     'Aut est aut asperiores quaerat.' ,
+     'CQA' ,
+          '2018-04-01' ,
+         '2018-04-01' ,
+         '2018-04-01' 
+  )
+  
+     insert into Incidents values(   34,
+         17415,
+         39,
+     'Atque quos quidem.' ,
+     'CQA' ,
+          '2018-04-01' ,
+         '2018-04-01' ,
+         '2018-04-01' 
+  )
+  
+     insert into Incidents values(   35,
+         23727,
+         55,
+     'Totam velit architecto eius qui.' ,
+     'CQA' ,
+          '2018-04-01' ,
+         '2018-04-01' ,
+         '2018-04-01' 
+  )
+  
+     insert into Incidents values(   36,
+         11589,
+         3,
+     'Et illum dolores ipsam nulla sint qui sit et vitae.' ,
+     'CQA' ,
+          '2018-04-01' ,
+         '2018-04-01' ,
+         '2018-04-01' 
+  )
+  
+     insert into Incidents values(   37,
+         43577,
+         98,
+     'Nam voluptatem ut explicabo.' ,
+     'CQA' ,
+          '2018-04-01' ,
+         '2018-04-01' ,
+         '2018-04-01' 
+  )
+  
+     insert into Incidents values(   38,
+         86274,
+         19,
+     'Accusantium consectetur eveniet dolore quia amet aut pariatur nostrum.' ,
+     'CQA' ,
+          '2018-04-01' ,
+         '2018-04-01' ,
+         '2018-04-01' 
+  )
+  
+     insert into Incidents values(   39,
+         34300,
+         37,
+     'Molestiae sapiente eos itaque.' ,
+     'CQA' ,
+          '2018-04-01' ,
+         '2018-04-01' ,
+         '2018-04-01' 
+  )
+  
+     insert into Incidents values(   40,
+         35969,
+         43,
+     'Deleniti ut est placeat provident eum at maxime animi et.' ,
+     'CQA' ,
+          '2018-04-01' ,
+         '2018-04-01' ,
+         '2018-04-01' 
+  )
+  
+     insert into Incidents values(   41,
+         20363,
+         33,
+     'Officia et qui repellendus ullam minus cum.' ,
+     'CQA' ,
+          '2018-04-01' ,
+         '2018-04-01' ,
+         '2018-04-01' 
+  )
+  
+     insert into Incidents values(   42,
+         50857,
+         96,
+     'Numquam est porro laboriosam quia magni qui impedit illo quis.' ,
+     'CQA' ,
+          '2018-04-01' ,
+         '2018-04-01' ,
+         '2018-04-01' 
+  )
+  
+     insert into Incidents values(   43,
+         44870,
+         52,
+     'Excepturi praesentium velit voluptatem corrupti officia aut omnis.' ,
+     'CQA' ,
+          '2018-04-01' ,
+         '2018-04-01' ,
+         '2018-04-01' 
+  )
+  
+     insert into Incidents values(   44,
+         9983,
+         73,
+     'Corporis nesciunt et beatae dolor quas vitae ea.' ,
+     'CQA' ,
+          '2018-04-01' ,
+         '2018-04-01' ,
+         '2018-04-01' 
+  )
+  
+     insert into Incidents values(   45,
+         59161,
+         71,
+     'Odio reprehenderit qui voluptate ut omnis.' ,
+     'CQA' ,
+          '2018-04-01' ,
+         '2018-04-01' ,
+         '2018-04-01' 
+  )
+  
+     insert into Incidents values(   46,
+         46066,
+         29,
+     'Nemo quaerat ut repudiandae itaque soluta.' ,
+     'CQA' ,
+          '2018-04-01' ,
+         '2018-04-01' ,
+         '2018-04-01' 
+  )
+  
+     insert into Incidents values(   47,
+         49011,
+         90,
+     'Nostrum quis fugit laboriosam minima deserunt iste.' ,
+     'CQA' ,
+          '2018-04-01' ,
+         '2018-04-01' ,
+         '2018-04-01' 
+  )
+  
+     insert into Incidents values(   48,
+         18698,
+         71,
+     'Exercitationem et quia omnis quam eius.' ,
+     'CQA' ,
+          '2018-04-01' ,
+         '2018-04-01' ,
+         '2018-04-01' 
+  )
+  
+     insert into Incidents values(   49,
+         46701,
+         29,
+     'Ipsam autem totam at.' ,
+     'CQA' ,
+          '2018-04-01' ,
+         '2018-04-01' ,
+         '2018-04-01' 
+  )
+  
+     insert into Incidents values(   50,
+         69496,
+         1,
+     'Tenetur rerum porro debitis rerum laboriosam quam.' ,
+     'CQA' ,
+          '2018-04-01' ,
+         '2018-04-01' ,
+         '2018-04-01' )

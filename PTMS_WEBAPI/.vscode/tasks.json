@@ -1,0 +1,25 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/PTMS_WEBAPI/PTMS_WEBAPI.csproj"
+            ],
+            "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "build",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/PTMS_WEBAPI/PTMS_WEBAPI.csproj"
+            ],
+            "problemMatcher": "$msCompile"
+        }
+    ]
+}

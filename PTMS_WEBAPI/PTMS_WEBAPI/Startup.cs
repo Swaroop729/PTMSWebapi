@@ -39,8 +39,14 @@ namespace PTMS_WEBAPI
             // we would be using the singleton for the ado.net model without using the context
             // after using the singleton i have placed a separate Data layer to use the ado.net entity
             //services.AddSingleton<IConfiguration>(Configuration);
-            services.AddMvc();
-        }
+            services.AddCors();
+            services.AddMvc()
+            .AddJsonOptions(options =>
+            {
+                options.SerializerSettings.ContractResolver
+                    = new Newtonsoft.Json.Serialization.DefaultContractResolver();
+            });
+                }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -49,6 +55,8 @@ namespace PTMS_WEBAPI
             {
                 app.UseDeveloperExceptionPage();
             }
+            // app.UseCors( options => options.WithOrigins("*").AllowAnyMethod().AllowAnyHeader() );
+            app.UseCors( options => options.WithOrigins("http://localhost:4300","http://localhost:4200").AllowAnyMethod().AllowAnyHeader() );
             app.UseMvcWithDefaultRoute();
             app.UseAuthentication();
             app.UseMvc();

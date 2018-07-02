@@ -13,5 +13,6 @@ namespace PTMS_WEBAPI.DTO
         }
 
         public DbSet<Incidents> Incidents { get; set; }
+        public DbSet<Leave> Leaves { get; set; }
     }
 }

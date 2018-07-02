@@ -38,12 +38,17 @@ namespace PTMS_WEBAPI.Controllers
         
         // POST: api/Incident
         [HttpPost]
-        public IActionResult Post([FromBody]Incidents obj)
+        public IActionResult AddIncident([FromBody] Incidents inputobj)
         {
-            mycontext.Incidents.Add(obj);
+            // if(inputobj.IncidentId!=null){
+            if(inputobj!=null){
+            mycontext.Incidents.Add(inputobj);
             mycontext.SaveChanges();
-            var url = Url.Link("Get", new { id = obj.Id });
-             return Created(url, obj);
+            var url = Url.Link("Get", new { id = inputobj.Id });
+             return Created(url, inputobj);}
+             else{
+                 return NoContent();
+             }
         }
         
         // PUT: api/Incident/5

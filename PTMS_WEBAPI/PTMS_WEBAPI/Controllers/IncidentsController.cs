@@ -44,7 +44,7 @@ namespace PTMS_WEBAPI.Controllers
         
         // POST: api/Incidents
         [HttpPost]
-        public void Post([FromBody]Incident obj)
+        public void Post([FromBody]Incidents obj)
         {
             DataLayer dataLayer = new DataLayer(configuration);
 
